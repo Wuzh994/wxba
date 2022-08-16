@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/index",
+    "pages/leaderboard/index",
+    "pages/setting/index"
+  ],
+  "tabBar": {
+		"color": "#7D7E80",
+		"selectedColor": "#C4323F",
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "assets/icons/lq.png",
+				"selectedIconPath": "assets/icons/lq1.png",
+				"text": "赛程"
+			},
+			{
+				"pagePath": "pages/leaderboard/index",
+				"iconPath": "assets/icons/wg.png",
+				"selectedIconPath": "assets/icons/wg1.png",
+				"text": "排行榜"
+			},
+			{
+				"pagePath": "pages/setting/index",
+				"iconPath": "assets/icons/gd.png",
+				"selectedIconPath": "assets/icons/gd1.png",
+				"text": "设置"
+			}
+		]
+	},
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#477BB3",
+    "navigationBarTitleText": "mini-nba",
+    "navigationBarTextStyle":"white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

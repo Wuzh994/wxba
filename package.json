@@ -1,0 +1,10 @@
+{
+  "name": "mini-nba",
+  "version": "0.1.0",
+  "description": "A weapp project.",
+  "author": "Wuzh994",
+  "license": "MIT",
+  "dependencies": {
+    "@vant/weapp": "^1.10.4"
+  }
+}
