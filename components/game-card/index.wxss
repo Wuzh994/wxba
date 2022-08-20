@@ -1,0 +1,30 @@
+/* components/game-card/index.wxss */
+.game-card {
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+}
+
+.game-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rpx;
+  color: #fff;
+  font-size: 20rpx;
+  background: linear-gradient(90deg, rgba(6,89,156,1) 0%, rgba(203,207,209,1) 50%);
+}
+
+.game-card__body {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+
+.line {
+  width: 1px;
+  margin: 0 20rpx;
+  background-color: #ccc;
+}

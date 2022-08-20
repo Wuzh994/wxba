@@ -1,0 +1,12 @@
+<!--components/game-card/index.wxml-->
+<view class="game-card">
+  <view class="game-card__header">
+    <view class="game-status">{{ GAME_STATUS[status] }}</view>
+    <view class="game-type">{{ tags || '--' }}</view>
+  </view>
+  <view class="game-card__body">
+    <team-score team-score="{{vTeam}}" winner="{{vTeam.score - hTeam.score > 0}}" />
+    <view class="line" />
+    <team-score team-score="{{hTeam}}" winner="{{hTeam.score - vTeam.score > 0}}" reverse="true" />
+  </view>
+</view>
