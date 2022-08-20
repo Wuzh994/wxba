@@ -1,0 +1,62 @@
+/* components/team-score/index.wxss */
+.team-score {
+  width: 40vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo, .score {
+  flex-shrink: 1;
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.score {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #b3b3b3;
+}
+
+.winner {
+  position: relative;
+  color: #000;
+}
+.winner::after {
+  content: '';
+  position: absolute;
+  bottom: -10rpx;
+  right: 50%;
+  transform: translateX(50%);
+  width: 0;
+  height: 0;
+  border: 10rpx solid transparent;
+  border-bottom-color: #000;
+}
+
+.team-score__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+}
+
+.team-score__info .win-loss {
+  color: #b2b2b2;
+  font-size: 20rpx;
+}
+
+.reverse {
+  flex-flow: row-reverse;
+}
+.start {
+  align-items: flex-start;
+}
+.end {
+  align-items: flex-end;
+}

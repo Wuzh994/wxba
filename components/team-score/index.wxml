@@ -1,0 +1,12 @@
+<!--components/team-score/index.wxml-->
+<view class="team-score {{reverse ? 'reverse' : ''}}">
+  <view class="logo">
+    <logo-icon name="{{teamScore.triCode}}" size="4rem"></logo-icon>
+  </view>
+  <view class="team-score__info {{reverse ? 'end' : 'start'}}">
+    <text>{{ TEAM_NAME[teamScore.triCode] }}</text>
+    <text>{{ teamScore.triCode }}</text>
+    <text class="win-loss">{{ teamScore.win }}-{{ teamScore.loss }}</text>
+  </view>
+  <view class="score {{winner ? 'winner' : ''}}">{{ teamScore.score || '--' }}</view>
+</view>
