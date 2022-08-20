@@ -1,5 +1,7 @@
 {
+  "navigationBarTitleText": "赛程",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "date-picker": "../../components/date-picker/index",
+    "game-card": "../../components/game-card/index"
   }
 }

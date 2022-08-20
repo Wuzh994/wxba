@@ -1,4 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-  <van-button type="info">{{motto}}</van-button>
+  <view class="header">
+    <date-picker bind:change="onChange"></date-picker>
+  </view>
+  <view wx:if="{{!games.length}}" class="empty-data">今日无比赛</view>
+  <scroll-view wx:else="" scroll-y="true" class="main">
+    <game-card
+      wx:for="{{games}}"
+      wx:for-item="g"
+      wx:key="gameId"
+      status="{{g.statusNum}}"
+      tags="{{g.tags}}"
+      h-team="{{g.hTeam}}"
+      v-team="{{g.vTeam}}"
+      bindtap="handleClick(g)"
+    ></game-card>
+  </scroll-view>
 </view>

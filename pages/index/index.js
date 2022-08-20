@@ -4,9 +4,15 @@ const app = getApp()
 import { getGamesByDate } from '../../api/index'
 Page({
   data: {
-    motto: 'Hello World',
+    games: [],
   },
   onLoad() {
-    getGamesByDate('20220608')
+    
   },
+  async onChange(e) {
+    const { data } = await getGamesByDate(e.detail)
+    this.setData({
+      games: data.games
+    })
+  }
 })

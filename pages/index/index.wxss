@@ -1,1 +1,16 @@
 /**index.wxss**/
+.header {
+  padding: 20rpx 0;
+}
+
+.main {
+  height: calc(100vh - 138rpx);
+}
+
+.empty-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: #969799;
+}
