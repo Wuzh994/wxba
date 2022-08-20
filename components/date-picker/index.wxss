@@ -1,0 +1,25 @@
+/* components/date-picker/index.wxss */
+.date-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  padding: 0 20rpx;
+  color: #333;
+  background-color: #fff;
+}
+
+.date-picker__conter {
+  display: flex;
+  align-items: center;
+}
+
+.date-picker__conter .date {
+  margin-left: 10rpx;
+  font-weight: bold;
+}
+
+.date-picker__left,
+.date-picker__right {
+  padding: 10rpx;
+}

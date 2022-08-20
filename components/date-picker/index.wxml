@@ -1,0 +1,22 @@
+<!-- components/date-picker/index.wxml-->
+<view class="date-picker">
+  <view class="date-picker__left" bindtap="_subDate">
+    <van-icon name="arrow-left" />
+  </view>
+  <view class="date-picker__conter" bindtap="_open">
+    <van-icon name="notes-o" size="1.25rem" />
+    <view class="date">{{ datetime }}</view>
+  </view>
+  <view class="date-picker__right" bindtap="_addDate">
+    <van-icon name="arrow" />
+  </view>
+</view>
+<van-calendar
+  color="#1989FA"
+  show="{{show}}"
+  show-confirm="{{false}}"
+  bind:confirm="_onConfirm"
+  bind:close="_onClose"
+  min-date="{{minDate}}"
+  max-date="{{maxDate}}"
+></van-calendar>
