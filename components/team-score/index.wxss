@@ -1,6 +1,5 @@
 /* components/team-score/index.wxss */
 .team-score {
-  width: 40vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -17,17 +16,33 @@
   overflow: hidden;
 }
 
-.score {
+.score,
+.score-light {
+  padding: 0 20rpx;
   font-size: 1.75rem;
   font-weight: bold;
+}
+.score {
   color: #b3b3b3;
 }
+.score-light {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, .5);
+}
 
-.winner {
+.winner,
+.winner-light {
   position: relative;
+}
+.winner {
   color: #000;
 }
-.winner::after {
+.winner-light {
+  color: #fff;
+}
+
+.winner::after,
+.winner-light::after {
   content: '';
   position: absolute;
   bottom: -10rpx;
@@ -36,19 +51,30 @@
   width: 0;
   height: 0;
   border: 10rpx solid transparent;
-  border-bottom-color: #000;
+  border-bottom-color: inherit;
 }
 
-.team-score__info {
+.team-score__info,
+.team-score__info-light {
   flex: 1;
   display: flex;
   flex-direction: column;
   font-size: 24rpx;
 }
+.team-score__info-light {
+  color: #fff;
+  font-size: 26rpx;
+}
 
-.team-score__info .win-loss {
-  color: #b2b2b2;
+.win-loss,
+.win-loss-light {
   font-size: 20rpx;
+}
+.win-loss {
+  color: #b2b2b2;
+}
+.win-loss-light {
+  color: #3f5f79;
 }
 
 .reverse {

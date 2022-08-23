@@ -3,10 +3,12 @@
   <view class="logo">
     <logo-icon name="{{teamScore.triCode}}" size="4rem"></logo-icon>
   </view>
-  <view class="team-score__info {{reverse ? 'end' : 'start'}}">
+  <view class="{{light ? 'team-score__info-light' : 'team-score__info'}} {{reverse ? 'end' : 'start'}}">
     <text>{{ TEAM_NAME[teamScore.triCode] }}</text>
     <text>{{ teamScore.triCode }}</text>
-    <text class="win-loss">{{ teamScore.win }}-{{ teamScore.loss }}</text>
+    <text class="{{light ? 'win-loss-light' : 'win-loss'}}">{{ teamScore.win }}-{{ teamScore.loss }}</text>
   </view>
-  <view class="score {{winner ? 'winner' : ''}}">{{ teamScore.score || '--' }}</view>
+  <view
+    class="{{light ? winner ?  'score-light winner-light' : 'score-light' : winner ? 'score winner' : 'score'}}"
+  >{{ teamScore.score || '--' }}</view>
 </view>
