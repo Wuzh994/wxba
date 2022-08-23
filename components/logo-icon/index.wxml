@@ -1,5 +1,6 @@
 <!--components/logo-icon/index.wxml-->
 <image
+  wx:if="{{name}}"
   style="width: {{size}}; height: {{size}}"
   src="../../assets/images/{{name}}.svg" mode="aspectFit"
 ></image>
