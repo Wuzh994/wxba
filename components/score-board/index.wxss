@@ -1,0 +1,29 @@
+/* components/score-board/index.wxss */
+.score-board {
+  padding: 10rpx 20rpx;
+  background: rgb(71,123,179);
+  background: linear-gradient(180deg, rgba(71,123,179,1) 0%, rgba(156,191,229,1) 100%);
+}
+
+.score-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  width: 1px;
+  background-color: #fff;
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  line-height: 2em;
+  font-size: 20rpx;
+}
+
+.game-info .center {
+  padding: 0 10rpx;
+}

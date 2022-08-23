@@ -1,0 +1,22 @@
+<!--components/score-board/index.wxml-->
+<view class="score-board">
+  <view class="score-info">
+    <team-score
+      light
+      team-score="{{vTeam}}"
+      winner="{{vTeam.score - hTeam.score > 0}}"
+    ></team-score>
+    <view class="line"></view>
+    <team-score
+      light
+      reverse
+      team-score="{{hTeam}}"
+      winner="{{hTeam.score - vTeam.score > 0}}"
+    ></team-score>
+  </view>
+  <view class="game-info">
+    <text>{{ date }}</text>
+    <text class="center">{{ time }}</text>
+    <text>{{ GAME_STATUS[scoreBoard.statusNum] }}</text>
+  </view>
+</view>
