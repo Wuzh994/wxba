@@ -13,7 +13,9 @@
       tags="{{g.tags}}"
       h-team="{{g.hTeam}}"
       v-team="{{g.vTeam}}"
-      bindtap="handleClick(g)"
+      data-id="{{g.gameId}}"
+      data-date="{{g.startDateEastern}}"
+      bindtap="toDetail"
     ></game-card>
   </scroll-view>
 </view>

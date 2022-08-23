@@ -1,18 +1,39 @@
 // pages/detail/index.js
+import { getGameDetails } from '../../api/index'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    scoreBoard: null,
+    hTeam: null,
+    vTeam: null,
+  },
+  async getGameDetail(gameDate, gameId) {
+    const { data } = await getGameDetails(gameDate, gameId)
+    const { hTeam, vTeam } = data.basicGameData
+    this.setData({
+      scoreBoard: data.basicGameData,
+      hTeam,
+      vTeam
+    })
+    // gameSummary = [genTeamScore(visitor), genTeamScore(home)]
+  
+    // const { activePlayers, hTeam: { leaders: hLeaders, totals: hTotals}, vTeam: { leaders: vLeaders, totals: vTotals} } = data.stats
+    // allTeamBest.value = [pickBest(vLeaders), pickBest(hLeaders)]
+  
+    // const v = activePlayers.filter(i => i.teamId === visitor.teamId)
+    // const h = activePlayers.filter(i => i.teamId === home.teamId)
+    // allPlayerStats.value = [genPlayerStats(v), genPlayerStats(h)]
+    // allTeamStats.value = genTeamStats(vTotals, hTotals)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  async onLoad({ gameDate, gameId }) {
+    await this.getGameDetail(gameDate, gameId)
   },
 
   /**

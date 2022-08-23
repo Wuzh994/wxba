@@ -1,1 +1,4 @@
 /* pages/detail/index.wxss */
+.container {
+  padding: 0;
+}
