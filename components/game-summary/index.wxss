@@ -1,0 +1,48 @@
+/* components/game-summary/index.wxss */
+.game-summary {
+  margin: 28rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+}
+
+.game-summary__header {
+  padding: 0 10rpx;
+  line-height: 2em;
+  color: #9a9a9a;
+  font-size: 20rpx;
+  background-color: #dfdfdf;
+}
+
+.game-summary__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+}
+.row+.row {
+  margin-top: 10rpx;
+}
+
+.team-info {
+  display: flex;
+  width: 25%;
+  height: 2em;
+  line-height: 2em;
+}
+.team-info .name {
+  margin-left: 10rpx;
+}
+
+.item {
+  width: 15%;
+  height: 2em;
+  line-height: 2em;
+  text-align: right;
+}

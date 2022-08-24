@@ -1,0 +1,29 @@
+<!--components/game-summary/index.wxml-->
+<view class="game-summary">
+  <view class="game-summary__header row">
+    <text class="team-info">球队</text>
+    <text class="item">Q1</text>
+    <text class="item">Q2</text>
+    <text class="item">Q3</text>
+    <text class="item">Q4</text>
+    <text class="item">总分</text>
+  </view>
+  <view class="game-summary__body">
+    <view
+      class="row"
+      wx:for="{{gameSummary}}"
+      wx:for-item="t"
+      wx:key="index"
+    >
+      <view class="team-info">
+        <logo-icon name="{{t.ta}}" size="2em" />
+        <text class="name">{{ TEAM_NAME[t.ta] }}</text>
+      </view>
+      <text class="item">{{ t.q1 }}</text>
+      <text class="item">{{ t.q2 }}</text>
+      <text class="item">{{ t.q3 }}</text>
+      <text class="item">{{ t.q4 }}</text>
+      <text class="item">{{ t.s }}</text>
+    </view>
+  </view>
+</view>
