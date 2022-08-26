@@ -1,0 +1,11 @@
+<!--components/rate-chart/index.wxml-->
+<view class="rate-chart">
+  <view class="rate-chart__title">
+    <text wx:if="{{title}}">{{title}}</text>
+    <slot wx:else name="title"></slot>
+  </view>
+  <view class="rate-chart__body">
+    <van-progress custom-class="no-radius" class="v-progress" pivot-text="{{ vScore }}" pivot-color="transparent" percentage="{{ 100-progressProps.percent[1] || 0 }}" stroke-width="20" color="#ebebeb" track-color="{{ progressProps.color[1] || '' }}"></van-progress>
+    <van-progress custom-class="no-radius" class="h-progress" pivot-text="{{ hScore }}" pivot-color="transparent" percentage="{{ progressProps.percent[0] || 0 }}" stroke-width="20" color="{{ progressProps.color[0] || '' }}"></van-progress>
+  </view>
+</view>
