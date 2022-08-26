@@ -1,0 +1,56 @@
+/* components/team-stats/index.wxss */
+.team-stats {
+  padding: 28rpx 0;
+  text-align: center;
+}
+
+.team-stats__title {
+  line-height: 2em;
+  font-weight: bold;
+}
+
+.team-stats__body {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+}
+
+.team-info-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #eee;
+}
+.team-info {
+  display: flex;
+  height: 2em;
+  line-height: 2em;
+  font-weight: bold;
+}
+.team-info .logo {
+  margin-right: 5px;
+}
+.team-info .name {
+  padding: 0 5px;
+}
+
+.reverse {
+  flex-flow: row-reverse;
+}
+.reverse .logo {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.rate-chart-list {
+  padding: 0 28rpx 28rpx;
+}
+.team-stats__tips {
+  margin-top: 20rpx;
+  text-align: right;
+  color: #969799;
+}
+.team-stats__tips .item {
+  font-size: 16rpx;
+}

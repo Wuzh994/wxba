@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "logo-icon": "../logo-icon/index",
+    "rate-chart": "../rate-chart/index"
+  }
+}

@@ -1,0 +1,33 @@
+<!--components/team-stats/index.wxml-->
+<view class="team-stats">
+  <view class="team-stats__title">技术统计</view>
+  <view class="team-stats__body">
+    <view class="team-info-box">
+      <view
+        class="team-info {{idx===1 ? 'reverse': ''}}"
+        wx:for="{{gameSummary}}"
+        wx:for-item="t"
+        wx:for-index="idx"
+        wx:key="idx"
+        >
+        <logo-icon class="logo" name="{{t.ta || ''}}" size="2em"></logo-icon>
+        <text class="name">{{ TEAM_NAME[t.ta] }}</text>
+        <text>{{ t.ta }}</text>
+      </view>
+    </view>
+    <view class="rate-chart-list">
+      <rate-chart
+        wx:for="{{allTeamStats}}"
+        wx:for-item="i"
+        wx:key="index"
+        title="{{i.title}}"
+        h-score="{{i.hScore}}"
+        v-score="{{i.vScore}}"
+      ></rate-chart>
+      <view class="team-stats__tips">
+        <view class="item">*所有数据长度</view>
+        <view class="item">均采用对比相对值</view>
+      </view>
+    </view>
+  </view>
+</view>
