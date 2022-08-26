@@ -4,73 +4,16 @@
     <score-board h-team="{{hTeam}}" v-team="{{vTeam}}" score-board="{{scoreBoard}}"></score-board>
     <view class="title">比赛数据</view>
   </view>
-  <!-- <view class="conter-content">
-    <GameSummary :game-summary="gameSummary" />
-    <view class="best-show">
-      <view class="best-show_title">本场最佳</view>
-      <view class="best-show_body">
-        <view class="item" v-for="(k, i) in KEYS" :key="i">
-          <van-image width="104rpx" height="76rpx" :src="allTeamBest?.[0][i]['img']" :alt="allTeamBest?.[0][i]['name']">
-            <template #error>
-              <van-image :src="defaultImg" alt="default img" />
-            </template>
-          </van-image>
-          <RateChart
-            class="center"
-            :vScore="allTeamBest?.[0][i][k] || 0"
-            :hScore="allTeamBest?.[1][i][k] || 0"
-          >
-            <template #title>
-              <view class="rate-title">
-                <view class="name">
-                  <text>{{ allTeamBest?.[0][i]['name'] }}</text>
-                </view>
-                <view class="type">{{ k === 'points' ? '得分' : k ==='rebounds' ? '篮板' : '助攻' }}</view>
-                <view class="name right">
-                  <text>{{ allTeamBest?.[1][i]['name'] }}</text>
-                </view>
-              </view>
-            </template>
-          </RateChart>
-          <van-image width="104rpx" height="76rpx" :src="allTeamBest?.[1][i]['img']" :alt="allTeamBest?.[1][i]['name']">
-            <template #error>
-              <van-image :src="defaultImg" alt="default img" />
-            </template>
-          </van-image>
-        </view>
-      </view>
-    </view>
-    <view class="tabs" @click="changeTabs">
-      <view class="tabs-item" data-index="0" :class="{'active-item': active == 0}">{{ TEAM_NAME[vTeam?.triCode!] }}</view>
-      <view class="tabs-item" data-index="1" :class="{'active-item': active == 1}">{{ TEAM_NAME[hTeam?.triCode!] }}</view>
+  <view class="conter-content">
+    <game-summary game-summary="{{gameSummary}}"></game-summary>
+    <best-show all-team-best="{{allTeamBest}}"></best-show>
+    <view class="tabs" bindtap="changeTabs">
+      <view data-index="0" class="tabs-item {{active == 0 ? 'active-item' : ''}}">{{ TEAM_NAME[vTeam.triCode] }}</view>
+      <view data-index="1" class="tabs-item {{active == 1 ? 'active-item' : ''}}">{{ TEAM_NAME[hTeam.triCode] }}</view>
     </view>
     <view class="player-stats-table">
-      <ATable :data="allPlayerStats?.[active] || []" :columns="columns" />
+      <a-table data="{{allPlayerStats[active] || []}}" columns="{{columns}}"></a-table>
     </view>
-    <view class="team-stats">
-      <view class="team-stats__title">技术统计</view>
-      <view class="team-stats__body">
-        <view class="team-info-box">
-          <view class="team-info" :class="{reverse: idx===1}" v-for="(t, idx) in gameSummary" :key="idx">
-            <LogoIcon class="logo" :name="t?.ta" size="2em" />
-            <text class="name">{{ TEAM_NAME[t?.ta] }}</text>
-            <text>{{ t?.ta }}</text>
-          </view>
-        </view>
-        <view class="rate-chart-list">
-          <RateChart
-            v-for="(i, idx) in allTeamStats"
-            :key="idx"
-            :title="i.title"
-            :hScore="i.hScore"
-            :vScore="i.vScore"
-          />
-          <view class="team-stats__tips">
-            <view class="item">*所有数据长度</view>
-            <view class="item">均采用对比相对值</view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view> -->
+    <team-stats game-summary="{{gameSummary}}" all-team-stats="{{allTeamStats}}"></team-stats>
+  </view>
 </view>
