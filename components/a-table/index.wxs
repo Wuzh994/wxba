@@ -1,0 +1,25 @@
+var style2String = require('../wxs/style.wxs');
+
+function sumWidth(columns, direction, idx) {
+  var directionIndex = transferIndex(columns, direction, idx)
+  var colWidth = +(columns[directionIndex]['width'] || 40)
+  if(idx <= 0) return colWidth
+  return colWidth + sumWidth(columns, direction, --idx)
+}
+
+function transferIndex(columns, direction, idx) {
+  return direction === 'right' ? (columns.length - idx - 1) : idx
+}
+
+function setDistance(columns, direction, idx, width = 40) {
+  var style = {}
+  var directionIndex = transferIndex(columns, direction, idx)
+  var distance = sumWidth(columns, direction, directionIndex)
+  style[direction] = distance - width + 'px'
+  style[width === 40 ? '' : 'min-width'] = width + 'px'
+  return style2String(style)
+}
+
+module.exports = {
+  setDistance: setDistance
+}
