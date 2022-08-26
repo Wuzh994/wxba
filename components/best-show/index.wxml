@@ -1,0 +1,29 @@
+<!--components/best-show/index.wxml-->
+<view class="best-show">
+  <view class="best-show__title">本场最佳</view>
+  <view class="best-show__body">
+    <view class="item" wx:for="{{KEYS}}" wx:key="index" wx:for-item="k" wx:for-index="i">
+      <van-image class="headshot" width="104rpx" height="76rpx" src="{{allTeamBest[0][i]['img'] || ''}}" alt="{{allTeamBest[0][i]['name']}}" use-error-slot>
+        <van-image slot="error" class="headshot" width="104rpx" height="76rpx" src="/assets/images/logoman.png" alt="default img"></van-image>
+      </van-image>
+      <rate-chart
+        class="center"
+        v-score="{{allTeamBest[0][i][k] || 0}}"
+        h-score="{{allTeamBest[1][i][k] || 0}}"
+      >
+        <view slot="title" class="rate-title">
+          <view class="name">
+            <text>{{ allTeamBest[0][i]['name'] }}</text>
+          </view>
+          <view class="type">{{ k === 'points' ? '得分' : k ==='rebounds' ? '篮板' : '助攻' }}</view>
+          <view class="name right">
+            <text>{{ allTeamBest[1][i]['name'] }}</text>
+          </view>
+        </view>
+      </rate-chart>
+      <van-image class="headshot" width="104rpx" height="76rpx" src="{{allTeamBest[1][i]['img'] || ''}}" alt="{{allTeamBest[1][i]['name']}}" use-error-slot>
+        <van-image slot="error" class="headshot" width="104rpx" height="76rpx" src="/assets/images/logoman.png" alt="default img"></van-image>
+      </van-image>
+    </view>
+  </view>
+</view>
