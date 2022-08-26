@@ -1,6 +1,6 @@
 /* components/game-summary/index.wxss */
 .game-summary {
-  margin: 28rpx;
+  margin: 28rpx 0;
   font-size: 24rpx;
   overflow: hidden;
   border-radius: 10rpx;
@@ -44,5 +44,5 @@
   width: 15%;
   height: 2em;
   line-height: 2em;
-  text-align: right;
+  text-align: center;
 }
