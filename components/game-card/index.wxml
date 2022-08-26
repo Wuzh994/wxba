@@ -5,8 +5,8 @@
     <view class="game-type">{{ tags || '--' }}</view>
   </view>
   <view class="game-card__body">
-    <team-score team-score="{{vTeam}}" winner="{{vTeam.score - hTeam.score > 0}}" />
+    <team-score wx:if="{{vTeam}}" team-score="{{vTeam}}" winner="{{vTeam.score - hTeam.score > 0}}" />
     <view class="line" />
-    <team-score team-score="{{hTeam}}" winner="{{hTeam.score - vTeam.score > 0}}" reverse="true" />
+    <team-score wx:if="{{hTeam}}" team-score="{{hTeam}}" winner="{{hTeam.score - vTeam.score > 0}}" reverse="true" />
   </view>
 </view>

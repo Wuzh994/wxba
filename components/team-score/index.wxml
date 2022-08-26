@@ -1,7 +1,7 @@
 <!--components/team-score/index.wxml-->
 <view class="team-score {{reverse ? 'reverse' : ''}}">
   <view class="logo">
-    <logo-icon name="{{teamScore.triCode}}" size="4rem"></logo-icon>
+    <logo-icon name="{{teamScore.triCode || ''}}" size="4rem"></logo-icon>
   </view>
   <view class="{{light ? 'team-score__info-light' : 'team-score__info'}} {{reverse ? 'end' : 'start'}}">
     <text>{{ TEAM_NAME[teamScore.triCode] }}</text>

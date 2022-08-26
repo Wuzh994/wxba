@@ -16,7 +16,7 @@
       wx:key="index"
     >
       <view class="team-info">
-        <logo-icon name="{{t.ta}}" size="2em" />
+        <logo-icon name="{{t.ta || ''}}" size="2em" />
         <text class="name">{{ TEAM_NAME[t.ta] }}</text>
       </view>
       <text class="item">{{ t.q1 }}</text>

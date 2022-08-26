@@ -17,6 +17,6 @@
   show-confirm="{{false}}"
   bind:confirm="_onConfirm"
   bind:close="_onClose"
-  min-date="{{minDate}}"
+  min-date="{{minDate || 0}}"
   max-date="{{maxDate}}"
 ></van-calendar>
