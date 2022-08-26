@@ -10,7 +10,7 @@ Page({
     
   },
   async onChange(e) {
-    const { data } = await getGamesByDate('20220616')
+    const { data } = await getGamesByDate(e.detail)
     this.setData({
       games: data.games
     })
