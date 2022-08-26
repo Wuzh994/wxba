@@ -1,5 +1,5 @@
 export const API_URL = {
-  base: 'http://data.nba.net'
+  base: 'https://data.nba.net'
 }
 
 export const TEAM_NAME = {
