@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "排行榜",
+  "usingComponents": {
+    "leader-board": "../../components/leader-board/index"
+  }
 }

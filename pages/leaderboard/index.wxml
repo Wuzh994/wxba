@@ -1,2 +1,5 @@
 <!--pages/leaderboard/index.wxml-->
-<text>pages/leaderboard/index.wxml</text>
+<view class="container">
+  <leader-board title="东部联盟" teams="{{eastTeams}}"></leader-board>
+  <leader-board title="西部联盟" teams="{{westTeams}}"></leader-board>
+</view>
