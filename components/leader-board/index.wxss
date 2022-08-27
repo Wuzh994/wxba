@@ -1,0 +1,55 @@
+/* components/leader-board/index.wxss */
+.leaderboard {
+  padding-top: 20rpx;
+  font-size: 24rpx;
+}
+.leaderboard__header {
+  display: flex;
+  padding: 0 28rpx;
+  line-height: 1.25rem;
+  color: #646566;
+  font-size: 20rpx;
+  border-bottom: 1px solid #f1f1f1;
+  background-color: #fff;
+}
+.leaderboard__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  height: 2rem;
+  padding: 0 28rpx;
+  background-color: #fbfbfb;
+}
+.item+.item {
+  border-top: 1px solid #f8f8f8;
+}
+
+.white {
+  background-color: #fff;
+}
+.team-info {
+  flex: 3;
+  display: flex;
+  align-items: center;
+}
+.team-info .index {
+  width: 1em;
+  text-align: center;
+}
+.team-info .logo {
+  display: flex;
+  margin: 0 28rpx;
+}
+.team-info .name {
+  font-weight: bold;
+}
+
+.ceil {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

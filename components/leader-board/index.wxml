@@ -1,0 +1,21 @@
+<!--components/leader-board/index.wxml-->
+<view class="leaderboard">
+  <view class="leaderboard__header">
+    <view wx:for="{{columns}}" wx:key="index" class="{{index === 0 ? 'team-info' : 'ceil'}}">
+      <text wx:if="{{item.prop === 'triCode'}}">{{title}}</text>
+      <text wx:else>{{item.label}}</text>
+    </view>
+  </view>
+  <view class="leaderboard__body">
+    <view wx:for="{{teams}}" wx:for-item="t" wx:for-index="idx" wx:key="triCode" class="{{idx < 8 ? 'item white' : 'item'}}">
+      <view wx:for="{{columns}}" wx:for-item="col" wx:key="index" class="{{index === 0 ? 'team-info' : 'ceil'}}">
+        <block wx:if="{{col.prop === 'triCode'}}">
+          <text class="index">{{idx + 1}}</text>
+          <logo-icon class="logo" name="{{t.triCode}}" size="1.75rem"></logo-icon>
+          <text class="name">{{TEAM_NAME[t.triCode]}}</text>
+        </block>
+        <text wx:else>{{t[col.prop]}}</text>
+      </view>
+    </view>
+  </view>
+</view>
