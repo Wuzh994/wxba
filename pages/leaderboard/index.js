@@ -31,7 +31,6 @@ Page({
   },
   // 胜差
   addWinDiff(teams) {
-    console.log(teams)
     const beseLine = teams[0].win
     return teams.map(t => {
       return {
