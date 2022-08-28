@@ -25,7 +25,7 @@ Component({
       { label: '胜', prop: 'win' },
       { label: '负', prop: 'loss' },
       { label: '胜率', prop: 'winPctV2' },
-      { label: '胜差', prop: 'winDiff' },
+      { label: '胜差', prop: 'gamesBehind' },
     ],
   },
 

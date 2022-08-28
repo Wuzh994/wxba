@@ -22,35 +22,23 @@ Page({
   // 构造数据
   genLeaderboard(teams) {
     const pick = this.sort(teams)
-    const eastTeams = this.addWinDiff(pick(EAST_TEAMS))
-    const westTeams = this.addWinDiff( pick(WEST_TEAMS))
     this.setData({
-      eastTeams,
-      westTeams
-    })
-  },
-  // 胜差
-  addWinDiff(teams) {
-    const beseLine = teams[0].win
-    return teams.map(t => {
-      return {
-        ...t,
-        winDiff: beseLine - t.win
-      }
+      eastTeams: pick(EAST_TEAMS),
+      westTeams: pick(WEST_TEAMS)
     })
   },
   // 排序
   sort(allTeams) {
-    return (subTeams) => subTeams.map(tId => {
+    return (pickTeams) => pickTeams.map(tId => {
       const item = allTeams.find(t => t.teamId === tId)
       return {
         triCode: item.teamSitesOnly.teamTricode,
         win: item.win,
         loss: item.loss,
-        winPct: item.winPct,
-        winPctV2: item.winPctV2+'%'
+        winPctV2: Number(item.winPctV2).toFixed(1)+'%',
+        gamesBehind: +item.gamesBehind
       }
-    }).sort((a, b) => b.winPct - a.winPct)
+    }).sort((a, b) => b.win - a.win)
   },
 
   /**
