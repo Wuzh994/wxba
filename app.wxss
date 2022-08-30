@@ -3,5 +3,5 @@
   height: 100vh;
   padding: 0 28rpx;
   box-sizing: border-box;
-  background-color: #f8f9fa;
+  background-color: #efefef;
 } 

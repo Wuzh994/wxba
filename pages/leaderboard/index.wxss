@@ -1,5 +1,4 @@
 /* pages/leaderboard/index.wxss */
 .container {
   padding: 0;
-  background-color: #efefef;
 }
