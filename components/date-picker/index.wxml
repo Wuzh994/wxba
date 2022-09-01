@@ -19,4 +19,5 @@
   bind:close="_onClose"
   min-date="{{minDate || 0}}"
   max-date="{{maxDate}}"
+  formatter="{{formatter}}"
 ></van-calendar>

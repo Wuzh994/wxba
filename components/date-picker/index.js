@@ -1,4 +1,5 @@
 // components/date-picker/index.js
+import { getSchedule } from '../../api/index';
 import {
   formatDate,
   getWeekday,
@@ -19,11 +20,15 @@ Component({
    * 组件的初始数据
    */
   data: {
-    date: null,
+    date: Date.now(),
     miniDate: null,
     maxDate: null,
     datetime: '',
-    show: false
+    show: false,
+    schedule: {},
+    formatter(day) {
+      return day;
+    },
   },
 
   /**
@@ -63,6 +68,16 @@ Component({
       this.setData({
         datetime: `${day} ${weekday}`
       })
+    },
+    _formatter(day, _schedule) {
+      const date = formatDate(day.date)
+      if (date in _schedule) {
+        const times = _schedule[date]
+        if (times > 0) {
+          day.bottomInfo = times + '场'
+        }
+      }
+      return day
     }
   },
 
@@ -72,19 +87,26 @@ Component({
       this._setDatetime(date)
       // $emit
       this.triggerEvent('change', formatDate(date))
+    },
+    'schedule': function(_schedule) {
+      this.setData({
+        formatter: (day) => this._formatter(day, _schedule)
+      })
     }
   },
 
   // 生命周期
   lifetimes: {
-    attached: function() {
+    attached: async function() {
       // 在组件实例进入页面节点树时执行
+      this._setDatetime(new Date())
       const { minDate,  maxDate} = getYearRange()
+      const { data } = await getSchedule()
       // 初始化时间
       this.setData({
-        date: new Date(),
         minDate,
-        maxDate
+        maxDate,
+        schedule: data
       })
     },
     detached: function() {
