@@ -1,5 +1,13 @@
 import fetch from '../utils/fetch'
 
+export const getSchedule = async () => {
+  const { data, statusCode } = await fetch('/data/10s/prod/v1/calendar.json')
+  return {
+    data,
+    status: statusCode
+  }
+}
+
 export const getStandings = async () => {
   const { data, statusCode } = await fetch('/prod/v1/current/standings_all.json')
   return {
