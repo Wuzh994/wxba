@@ -1,3 +1,3 @@
-## mini-nba
+## WXBA
 
-A weapp project.
+A WeChat applet for NBA sports information.
