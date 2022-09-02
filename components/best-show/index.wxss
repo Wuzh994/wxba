@@ -1,15 +1,10 @@
 /* components/best-show/index.wxss */
-.best-show {
-  /* margin: 0 28rpx; */
-}
 .best-show__title {
   line-height: 2em;
   font-weight: bold;
   text-align: center;
 }
-.best-show__body {
-  /* padding: 0 28rpx; */
-}
+
 .best-show__body .item {
   display: flex;
   justify-content: center;
