@@ -1,6 +1,10 @@
 <!--components/logo-icon/index.wxml-->
-<image
+<van-image
   wx:if="{{name}}"
-  style="width: {{size}}; height: {{size}}"
-  src="/assets/images/{{name}}.svg" mode="aspectFit"
-></image>
+  use-error-slot
+  width="{{size}}" height="{{size}}"
+  error-class="white-bg"
+  src="/assets/images/{{name}}.svg"
+>
+  <van-image slot="error" width="3rem" height="3rem" src="/assets/images/fallback.svg" alt="team logo"></van-image>
+</van-image>

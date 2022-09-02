@@ -1,1 +1,4 @@
 /* components/logo-icon/index.wxss */
+.white-bg {
+  background-color: #ffffff;
+}
