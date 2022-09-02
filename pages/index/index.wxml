@@ -10,7 +10,7 @@
       wx:for-item="g"
       wx:key="gameId"
       status="{{g.statusNum}}"
-      tags="{{g.tags}}"
+      tags="{{g.tags || ['Standard']}}"
       h-team="{{g.hTeam}}"
       v-team="{{g.vTeam}}"
       data-id="{{g.gameId}}"
